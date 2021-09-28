@@ -22,9 +22,9 @@ java -jar internet-bank-api-0.0.1-SNAPSHOT.jar
 ~~~
 По выполнению данной команды приложение будет запущено на порту 8080
 
-Для изменения параметров приложения необходимо изменить значения в файле src/main/resources/application.yml
+Для изменения параметров приложения необходимо изменить значения в файле _src/main/resources/application.yml_
 
-Для запуска базы данных Postgres используется файл docker/docker-compose.yaml. Находясь в директории docker, необходимо выполнить команду:
+Для запуска базы данных Postgres используется файл _docker/docker-compose.yaml_. Находясь в директории docker, необходимо выполнить команду:
 ~~~
 docker-compose up -d
 ~~~
