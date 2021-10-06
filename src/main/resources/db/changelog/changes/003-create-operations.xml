@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="03-create-operations"
+               author="author_name"
+               context="ddl">
+        <createTable tableName="operations" remarks="Таблица с операциями пользователей">
+            <column name="id" type="${uuid_type}" defaultValueComputed="${uuid_function}" remarks="Идентификатор операции">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_operations"/>
+            </column>
+            <column name="user_id"
+                    type="${uuid_type}">
+                <constraints nullable="false" foreignKeyName="fk_operations_user_id"
+                             references="users(id)"/>
+            </column>
+            <column name="type"
+                    type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount"
+                    type="number"/>
+            <column name="created_at"
+                    type="timestamp" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

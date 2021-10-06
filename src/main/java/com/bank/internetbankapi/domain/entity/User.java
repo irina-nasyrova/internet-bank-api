@@ -1,8 +1,6 @@
 package com.bank.internetbankapi.domain.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,22 +13,22 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name="last_name", nullable=false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name="first_name", nullable=false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name="middle_name")
+    @Column(name = "middle_name")
     private String middleName;
 
-    @Column(name="balance")
+    @Column(name = "balance")
     private BigDecimal balance;
 }
