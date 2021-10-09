@@ -9,8 +9,5 @@ public enum OperationTypeEnum {
     PUT_MONEY,
 
     // перевод другому клиенту
-    TRANSFER_TO,
-
-    // перевод от другого клиента вам
-    TRANSFER_FROM
+    TRANSFER
 }
