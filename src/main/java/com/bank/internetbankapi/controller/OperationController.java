@@ -67,13 +67,12 @@ public class OperationController {
     }
 
     @PutMapping("/{userId}/transfer")
-    public List<String> transferMoney(
+    public void transferMoney(
             @PathVariable UUID userId,
             @RequestParam UUID userIdTo,
             @RequestParam BigDecimal amount) {
         log.info("Handled /operations/{}/transfer PUT HTTP request", userId);
-        List<String> result = operationService.transferMoney(userId, userIdTo, amount);
-        log.info("Produced HTTP 200 response for /operations/{}/transfer PUT:{}{}", userId, lineSeparator(), result);
-        return result;
+        operationService.transferMoney(userId, userIdTo, amount);
+        log.info("Produced HTTP 200 response for /operations/{}/transfer PUT:{}{}", userId, lineSeparator(), "OK");
     }
 }

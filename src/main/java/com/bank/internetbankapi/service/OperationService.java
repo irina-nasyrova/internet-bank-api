@@ -49,7 +49,6 @@ public interface OperationService {
      * @param userIdFrom идентификатор пользователя
      * @param userIdTo   идентификатор пользователя, которому переводят
      * @param amount     сумма для перевода
-     * @return баланс после перевода на заданную сумму
      */
-    List<String> transferMoney(UUID userIdFrom, UUID userIdTo, BigDecimal amount);
+    void transferMoney(UUID userIdFrom, UUID userIdTo, BigDecimal amount);
 }
