@@ -60,11 +60,18 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public void transferMoney(UUID userId, UUID userIdTo, BigDecimal amount) {
+
         User user = getUser(userId);
         BigDecimal newBalance = user.getBalance().subtract(amount);
         checkBalance(newBalance, userId);
         user.setBalance(newBalance);
         userRepository.save(user);
+
+        User userTo = getUser(userIdTo);
+        BigDecimal newBalanceTo = userTo.getBalance().add(amount);
+        userTo.setBalance(newBalanceTo);
+        userRepository.save(userTo);
+
         saveOperation(userId, TRANSFER_TO, amount);
         saveOperation(userIdTo, TRANSFER_FROM, amount);
     }
