@@ -15,7 +15,7 @@
     <description>Internet bank api project</description>
     <properties>
         <java.version>11</java.version>
-        <liquibase.version>4.4.3</liquibase.version>
+        <liquibase.version>4.11.0</liquibase.version>
     </properties>
     <dependencies>
         <dependency>
